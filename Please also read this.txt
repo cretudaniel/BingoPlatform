@@ -1,0 +1,11 @@
+For the icons : https://thenounproject.com
+For the database : XAMPP https://www.apachefriends.org/index.html
+CSS&HTML editor : ATOM https://atom.io
+
+Platform for learning HTML CSS AND PHP : https://www.w3schools.com
+Platform for web animations : ANIMISTA  http://animista.net
+
+For the mobile app: Apache Cordova	https://cordova.apache.org
+Editor with integration to Apache Cordova : https://visualstudio.microsoft.com/vs/features/cordova/
+
+SourceTree in case it crashes at commitment : 	https://product-downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-3.1.3.exe?_ga=2.187265256.117146731.1566419931-1665721858.1566419931
