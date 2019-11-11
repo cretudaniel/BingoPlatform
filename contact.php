@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+  $val_check=1;
+  $username=$_SESSION['username'];
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +32,16 @@
 <nav class="site-header sticky-top py-1">
   <div class="container d-flex flex-column flex-md-row justify-content-between" style="padding-left:10px; padding-right:10px; max-width:1620px;">
       <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold;font-size:18px;">BINGO </a>
-      <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold; vertical-align:middle;">YOU NEED TO CREATE AN ACCOUNT  FIRST </a>
+      <?php
+      if($val_check="1"){
+        echo '<a class="py-2 d-none d-md-inline-block" href="logout.php">You are logged-in as: '.$username.'</a>';
+        //echo $username;
+        //console.log($val_check);
+      }else{
+      echo '<a class="py-2 d-none d-md-inline-block" href="">LOGIN</a>';
+      //bsdiper
+    }
+    ?>
     </div>
   </nav>
 
@@ -43,7 +59,7 @@
 
       <p class="user">
         <p>Please let us know what is your problem.</p>
-      
+
   <input type="text" placeholder="Your name" name="name" class="form-control" id="name"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
   </br>
   <input type="email" placeholder="Your email" name="email" class="form-control" id="email"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
