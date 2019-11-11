@@ -114,7 +114,7 @@ saas
                 <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
                 <li><a href="#">CATEGORY</a></li>
                 <li><a href="#">REGISTER</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
 
               </ul>
             </div>
