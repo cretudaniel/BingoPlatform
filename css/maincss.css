@@ -38,6 +38,32 @@
   -webkit-transform: rotate(30deg);
   transform: rotate(30deg);
 }
+.pngstuff {
+  position: absolute;
+  right: 10%;
+  right: 5%;
+  bottom: -10%;
+  width: 300px;
+  height: 540px;
+  background-image:url(images/png2.png);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.pngstuff2{
+  top: -5%;
+  right: auto;
+  bottom: 0;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  left: 5%;
+
+}
+img{
+  height: 100%; width: 100%; object-fit: contain;
+}
+.maxh{
+  max-height: 50px;
+}
 
 .product-device::before {
   position: absolute;

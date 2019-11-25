@@ -8,6 +8,8 @@ session_start();
 
 if (isset($_SESSION['username'])) {
     header("Location: main.php");
+}else {
+  $val_check=1;
 }
 
 $error = 1;
@@ -45,25 +47,50 @@ if (isset($_POST['submit'])) {
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Extra CSS that i need -->
-  <link href="maincss.css" rel="stylesheet">
-  <link href="animations.css" rel="stylesheet">
+  <link href="css/maincss.css" rel="stylesheet">
+  <link href="css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
   <!-- Here is the header , sticky one-->
-
+<!-- OLD HEADER
 <nav class="site-header sticky-top py-1">
   <div class="container d-flex flex-column flex-md-row justify-content-between" style="padding-left:10px; padding-right:10px; max-width:1620px;">
       <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold;font-size:18px;">BINGO </a>
       <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold; vertical-align:middle;">YOU NEED TO LOGIN FIRST </a>
     </div>
   </nav>
+-->
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm sticky-top" style="padding-left:10px; padding-right:10px;">
+
+    <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none;">BINGO</a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-3 text-dark" href="contact.php">Contact</a>
+    <a class="p-3 text-dark" href="#">Language</a>
+  </nav>
+
+    <?php
+    if($val_check="0"){
+      echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
+//GOOD WORKING THING DOWN HERE
+    //  echo '<a class="btn btn-outline-primary" href="logout.php">You are logged-in as: '.$username.'</a>';
+//GOOD WORKING THING UP HERE
+      //echo $username;
+      //console.log($val_check);
+    }else{
+    echo '<a class="btn btn-outline-primary" href="signin.php">Sign up</a>';
+    //bsdiper
+  }
+  ?>
+  </div>
+
+
 
   <!-- THE END OF THE HEADER -->
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
 
       <br>

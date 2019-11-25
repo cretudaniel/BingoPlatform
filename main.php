@@ -23,11 +23,15 @@ if (isset($_SESSION['username'])) {
   <meta name="description" content="Bingo - Online selling platform ">
   <meta name="Bingo" content="selling and buying">
   <!-- Bootstrap link -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+-->
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+-->
   <!-- Extra CSS that i need -->
-  <link href="maincss.css" rel="stylesheet">
-  <link href="animations.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/maincss.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -36,48 +40,65 @@ if (isset($_SESSION['username'])) {
 <body>
   <!-- Here is the header , sticky one-->
 
-<nav class="site-header sticky-top py-1">
-  <div class="container d-flex flex-column flex-md-row justify-content-between" style="padding-left:10px; padding-right:10px; max-width:1620px;">
-      <a class="py-2 d-none d-md-inline-block" href="main.html" style="font-weight:bold;">BINGO </a>
-      <a class="py-2 d-none d-md-inline-block">&nbsp</a>
-      <a class="py-2 d-none d-md-inline-block">&nbsp</a>
-      <a class="py-2 d-none d-md-inline-block">&nbsp</a>
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow-sm sticky-top" style="padding-left:10px; padding-right:10px;">
+
+      <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none;">BINGO</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-3 text-dark" href="contact.php">Contact</a>
+      <a class="p-3 text-dark" href="#">Language</a>
+    </nav>
 
       <?php
       if($val_check="1"){
-        echo '<a class="py-2 d-none d-md-inline-block" href="logout.php">You are logged-in as: '.$username.'</a>';
+        echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
+//GOOD WORKING THING DOWN HERE
+      //  echo '<a class="btn btn-outline-primary" href="logout.php">You are logged-in as: '.$username.'</a>';
+//GOOD WORKING THING UP HERE
         //echo $username;
         //console.log($val_check);
       }else{
-      echo '<a class="py-2 d-none d-md-inline-block" href="">LOGIN</a>';
+      echo '<a class="btn btn-outline-primary" href="signin.php">Sign up</a>';
       //bsdiper
     }
     ?>
     </div>
-  </nav>
+
 
   <!-- THE END OF THE HEADER -->
 
   <!-- THE MAIN ANNOUCEMENT ABOUT THE APP WITH A CREATE ACCOUNT BUTTON-->
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
+<div class="position-relative overflow-visible p-6 p-md-5 m-md-0 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5 ">
        <h1 class="display-4 font-weight-bold slide-in-blurred-top">BINGO</h1>
-       <p class="lead font-weight-normal slide-in-left">Best platform for selling your goods in a modern way.</p>
+       <p class="lead font-weight-normal slide-in-blurred-top">Best platform for selling your goods in a modern way.</p>
        <a class="btn btn-outline-secondary" href="login.php">Go shopping!</a>
      </div>
-     <div class="product-device shadow-sm d-none d-md-block"></div>
-     <div class="product-device product-device-2 shadow-sm d-none d-md-block "></div>
-    </div>
 
-    <!-- THE END OF THE MAiN ANNOUCEMENT -->
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-saas
-    </div>
+     <div class="pngstuff d-none d-md-block">
+       <img src="images/png2.png">
+     </div>
+     <div class="product-device product-device-2 shadow-sm d-none d-md-block "style="z-index:1;">
 
-  <div class="container-fluid">
-    <p>asdasdasd </p>
-</div>
+     </div>
+   </div>
+
+   <!-- THE END OF THE MAiN ANNOUCEMENT -->
+   <!--
+    <div class="position-relative overflow-hidden p-0 p-md-0 m-md-0 text-center bg-light">
+
+          <img src="images/png4.png">
+
+        </div>
+      -->
+      <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light">
+        <br>
+        <br>
+
+      </div>
+
+
 <!-- In this footer i can't get the text color white so i need to use everytime a style instruction
       i've tried using a class for this but it's not working , i don't know why -Daniel -->
 <footer class="section footer-classic context-dark bg-image" style="background: rgb(33,37,41);text-decoration:none;">
