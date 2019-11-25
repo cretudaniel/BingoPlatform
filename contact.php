@@ -1,17 +1,10 @@
 <?php
-
-include 'connection.php';
-
 session_start();
-
 if (isset($_SESSION['username'])) {
   $val_check=1;
   $username=$_SESSION['username'];
-} else {
-    $val_check=0;
 }
-//$query = mysqli_query($db, "SELECT username FROM user WHERE username='$username' AND password='$password'");
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +19,7 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Extra CSS that i need -->
   <link href="css/maincss.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -47,18 +41,17 @@ if (isset($_SESSION['username'])) {
       <?php
       if($val_check="0"){
         echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
-//GOOD WORKING THING DOWN HERE
+  //GOOD WORKING THING DOWN HERE
       //  echo '<a class="btn btn-outline-primary" href="logout.php">You are logged-in as: '.$username.'</a>';
-//GOOD WORKING THING UP HERE
+  //GOOD WORKING THING UP HERE
         //echo $username;
         //console.log($val_check);
       }else{
-      echo '<a class="btn btn-outline-primary" href="signin.php">Create the account first</a>';
+      echo '<a class="btn btn-outline-primary" href="signin.php">Sign up</a>';
       //bsdiper
     }
     ?>
     </div>
-
 
 
   <!-- THE END OF THE HEADER -->
@@ -69,33 +62,27 @@ if (isset($_SESSION['username'])) {
    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); padding-top:15px;">
 
     <h1 class="display-4 font-weight-bold slide-in-blurred-top" style="color: 	#484848;">BINGO</h1>
-    <span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
-    <br>
-      <form action="useradd.php" method="POST">
+    <span class="col-12 badge badge-success" style="display:none;" id="verde">The message have been sent!</span>
+
+      <form action="contactadd.php" method="POST">
 
       <p class="user">
-  <input type="text" placeholder="USERNAME" name="username" class="form-control" id="username"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+        <p>Please let us know what is your problem.</p>
+
+  <input type="text" placeholder="Your name" name="name" class="form-control" id="name"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
   </br>
-  <input type="password" placeholder="PASSWORD" name="password" class="form-control" id="password"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+  <input type="email" placeholder="Your email" name="email" class="form-control" id="email"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
   </br>
-  <input type="text" placeholder="EMAIL" name="email" class="form-control" id="email"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+  <input type="text" placeholder="Your phone number" name="phone" class="form-control" id="phone"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
 <br />
-  <input type="text" placeholder="NAME" name="name" class="form-control" id="name"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-<br />
-  <input type="text" placeholder="SURNAME" name="surname" class="form-control" id="surname"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-<br />
-  <input type="text" placeholder="AGE" name="age" class="form-control" id="age"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-<br />
-  <input type="text" placeholder="CITY" name="city" class="form-control" id="city"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+  <textarea placeholder="Your message" name="message" class="form-control" id="message"style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);" rows="3"></textarea>
 <br />
 
+
 </p>
-    <button class="btn btn-success" id="1"
-    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float:left;">
-     Create this account</button>
-    <a href="login.php">
-    <input type="button" value="I have an account" class="btn btn-info" style="float: right;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"></a>
+    <button class="btn btn-info" id="1"
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float:center;">
+     Contact us!</button>
           </form>
       </div>
     </div>
@@ -138,7 +125,7 @@ if (isset($_SESSION['username'])) {
                 <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
                 <li><a href="#">CATEGORY</a></li>
                 <li><a href="#">REGISTER</a></li>
-                <li><a href="contact.php">CONTACT</a></li>
+                <li><a href="#">CONTACT</a></li>
 
               </ul>
             </div>
@@ -154,23 +141,18 @@ if (isset($_SESSION['username'])) {
   	$(document).ready(function () {
   		$("#1").click(function (event){
   			event.preventDefault();
-  	var username;
-  	var password;
   	var name;
+  	var email;
+  	var phone;
     var email;
-    var surname;
-    var age;
-    var city;
+    var message;
 
-  	username= $("#username").val();
-  	password= $("#password").val();
   	name= $("#name").val();
-    email= $("#email").val();
-    surname= $("#surname").val();
-    age= $("#age").val();
-    city= $("#city").val();
-  	console.log(username, password, name);
-  $.post("useradd.php", {username: username, password: password ,name: name, email: email, surname: surname, age: age, city: city},
+  	email= $("#email").val();
+  	phone= $("#phone").val();
+    message= $("#message").val();
+  	console.log(name, email, phone);
+  $.post("messagedd.php", {name: name, email: email ,phone: phone, message: message},
   function(data){
   		$("#verde").html(data);
   		$("#verde").fadeIn('slow');
