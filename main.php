@@ -30,6 +30,7 @@ if (isset($_SESSION['username'])) {
   <!-- Extra CSS that i need -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/maincss.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
@@ -41,9 +42,9 @@ if (isset($_SESSION['username'])) {
   <!-- Here is the header , sticky one-->
 
 
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow-sm sticky-top" style="padding-left:10px; padding-right:10px;">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow sticky-top" style="padding-left:10px; padding-right:10px;">
 
-      <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none;">BINGO</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none; ">BINGO</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-3 text-dark" href="contact.php">Contact</a>
       <a class="p-3 text-dark" href="#">Language</a>
@@ -70,19 +71,12 @@ if (isset($_SESSION['username'])) {
   <!-- THE MAIN ANNOUCEMENT ABOUT THE APP WITH A CREATE ACCOUNT BUTTON-->
 
 <div class="position-relative overflow-visible p-6 p-md-5 m-md-0 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5 ">
-       <h1 class="display-4 font-weight-bold slide-in-blurred-top">BINGO</h1>
+  <div class="col-md-5 p-lg-3 mx-auto my-3 ">
+       <h1 class="display-3 font-weight-bold slide-in-blurred-top "style="color: #008bff;text-shadow: 2px 2px 4px #ffffff;">BINGO</h1>
        <p class="lead font-weight-normal slide-in-blurred-top">Best platform for selling your goods in a modern way.</p>
-       <a class="btn btn-outline-secondary" href="login.php">Go shopping!</a>
+       <a class="btn btn-outline-info" href="login.php">Go shopping!</a>
      </div>
-
-     <div class="pngstuff d-none d-md-block">
-       <img src="images/png2.png">
      </div>
-     <div class="product-device product-device-2 shadow-sm d-none d-md-block "style="z-index:1;">
-
-     </div>
-   </div>
 
    <!-- THE END OF THE MAiN ANNOUCEMENT -->
    <!--
@@ -92,15 +86,19 @@ if (isset($_SESSION['username'])) {
 
         </div>
       -->
-      <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light">
-        <br>
-        <br>
+
+
+      <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light ">
+      </section>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
       </div>
 
 
 <!-- In this footer i can't get the text color white so i need to use everytime a style instruction
       i've tried using a class for this but it's not working , i don't know why -Daniel -->
+<!--
 <footer class="section footer-classic context-dark bg-image" style="background: rgb(33,37,41);text-decoration:none;">
         <div class="container">
           <div class="row row-30">
@@ -109,7 +107,7 @@ if (isset($_SESSION['username'])) {
                 <h5 style="color:white;">Who are we?</h5>
                 <br>
                 <p style="color:white;">We are the best trading goods platform! Our motto is "Buy it , use it , sell it!" We belive in what we are doing an hope you will find here the perfect place to sell your items.</p>
-                <!-- Rights-->
+
                 <p class="rights whiteee" style="color:white;"><span>©  </span><span class="copyright-year white" style="color:white;">2019-2020</span><span> </span><span>Team Brain Buddies</span><span>. </span><span></span></p>
 
             </div>
@@ -141,9 +139,21 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
         </div>
-
       </footer>
+-->
       <!-- THE END OF THE FOOTER -->
+      <footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
+   <div class="container text-center">
+     <!--Facebook-->
+     <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
+     <!--Bitbucket-->
+     <a class="btn btn-social-icon btn-lg btn-bitbucket" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-bitbucket"></i></a>&nbsp;&nbsp;
+     <!--Twitter-->
+     <a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+     <!--GMAIL-->
+     <a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-google"></i></a>&nbsp;&nbsp;
+   </div>
+ </footer>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
