@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) {
   <meta name="Bingo" content="selling and buying">
   <!-- Bootstrap link -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" rel='stylesheet'>
   <!-- Extra CSS that i need -->
   <link href="css/maincss.css" rel="stylesheet">
   <link href="css/animations.css" rel="stylesheet">
@@ -68,7 +68,7 @@ if (isset($_SESSION['username'])) {
   <div class="col-8 offset-2 jumbotron"
    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); padding-top:15px;">
 
-    <h1 class="display-4 font-weight-bold slide-in-blurred-top" style="color: 	#484848;">BINGO</h1>
+    <h1 class="display-3 font-weight-bold slide-in-blurred-top "style="color: #008bff;text-shadow: 2px 2px 4px #ffffff;">BINGO</h1>
     <span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
     <br>
       <form action="useradd.php" method="POST">
@@ -102,51 +102,18 @@ if (isset($_SESSION['username'])) {
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block "></div>
 </div>
-<!-- In this footer i can't get the text color white so i need to use everytime a style instruction
-      i've tried using a class for this but it's not working , i don't know why -Daniel -->
-<footer class="section footer-classic context-dark bg-image" style="background: rgb(33,37,41);text-decoration:none;">
-        <div class="container">
-          <div class="row row-30">
-            <div class="col-md-4 col-xl-5">
-              <br>
-                <h5 style="color:white;">Who are we?</h5>
-                <br>
-                <p style="color:white;">We are the best trading goods platform! Our motto is "Buy it , use it , sell it!" We belive in what we are doing an hope you will find here the perfect place to sell your items.</p>
-                <!-- Rights-->
-                <p class="rights whiteee" style="color:white;"><span>©  </span><span class="copyright-year white" style="color:white;">2019-2020</span><span> </span><span>Team Brain Buddies</span><span>. </span><span></span></p>
-
-            </div>
-            <div class="col-md-4" style="color:white;">
-              <br>
-              <h5>Contacts</h5>
-              <br>
-              <dl class="contact-list">
-                <dt>Address:</dt>
-                <dd>Maribor, FERI University, 2000 </dd>
-              </dl>
-              <dl class="contact-list" style="text-decoration:none;">
-                <dt>EMAIL:</dt>
-                <dd style="text-decoration:none;"><a href="mailto:#" style="text-decoration:none;">bingoteamcontact@gmail.com</a></dd>
-              </dl>
-
-            </div>
-            <div class="col-md-4 col-xl-3" style="color:white;">
-              <br>
-              <h5>&nbsp &nbsp &nbsp Links</h5>
-              <br>
-              <ul class="nav-list" style="text-decoration:none;">
-                <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
-                <li><a href="#">CATEGORY</a></li>
-                <li><a href="#">REGISTER</a></li>
-                <li><a href="contact.php">CONTACT</a></li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </footer>
-
+<footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
+<div class="container text-center">
+<!--Facebook-->
+<a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
+<!--Bitbucket-->
+<a class="btn btn-social-icon btn-lg btn-bitbucket" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-bitbucket"></i></a>&nbsp;&nbsp;
+<!--Twitter-->
+<a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+<!--GMAIL-->
+<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-google"></i></a>&nbsp;&nbsp;
+</div>
+</footer>
 
   <script src="js/jquery.js"> </script>
   <script src="js/bootstrap.min.js"></script>

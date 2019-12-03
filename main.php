@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) {
 
 </head>
 
-<body>
+<body style="overflow:hidden;">
   <!-- Here is the header , sticky one-->
 
 
@@ -48,14 +48,15 @@ if (isset($_SESSION['username'])) {
       <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-3 text-dark" href="contact.php">Contact</a>
       <a class="p-3 text-dark" href="#">Language</a>
-    </nav>
+
+
 
       <?php
       if($val_check="1"){
-        echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
-//GOOD WORKING THING DOWN HERE
-      //  echo '<a class="btn btn-outline-primary" href="logout.php">You are logged-in as: '.$username.'</a>';
-//GOOD WORKING THING UP HERE
+        // echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
+  //GOOD WORKING THING DOWN HERE
+       echo '<a class="btn btn-outline-primary" href="user.php">You are logged-in as: '.$username.'</a>';
+  //GOOD WORKING THING UP HERE
         //echo $username;
         //console.log($val_check);
       }else{
@@ -63,6 +64,8 @@ if (isset($_SESSION['username'])) {
       //bsdiper
     }
     ?>
+    <a class="btn btn-outline-danger" href="logout.php">X</a>
+    </nav>
     </div>
 
 
@@ -91,7 +94,7 @@ if (isset($_SESSION['username'])) {
       <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light ">
       </section>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
       </div>
 
@@ -141,7 +144,7 @@ if (isset($_SESSION['username'])) {
         </div>
       </footer>
 -->
-      <!-- THE END OF THE FOOTER -->
+
       <footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
    <div class="container text-center">
      <!--Facebook-->
