@@ -28,11 +28,11 @@ if (isset($_SESSION['username'])) {
 <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 -->
   <!-- Extra CSS that i need -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/maincss.css" rel="stylesheet">
+  <link href="/webapp/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/webapp/css/maincss.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <link href="css/animations.css" rel="stylesheet">
+  <link href="/webapp/css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -55,12 +55,12 @@ if (isset($_SESSION['username'])) {
       if($val_check="1"){
         // echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
   //GOOD WORKING THING DOWN HERE
-       echo '<a class="btn btn-outline-primary" href="user.php">You are logged-in as: '.$username.'</a>';
+       echo '<a class="btn btn-outline-primary" href="/webapp/user.php">You are logged-in as: '.$username.'</a>';
   //GOOD WORKING THING UP HERE
         //echo $username;
         //console.log($val_check);
       }else{
-      echo '<a class="btn btn-outline-primary" href="signin.php">Sign up</a>';
+      echo '<a class="btn btn-outline-primary" href="/webapp/signin.php">Sign up</a>';
       //bsdiper
     }
     ?>
@@ -77,6 +77,14 @@ if (isset($_SESSION['username'])) {
   <div class="col-md-5 p-lg-3 mx-auto my-3 ">
        <h1 class="display-3 font-weight-bold slide-in-blurred-top "style="color: #008bff;text-shadow: 2px 2px 4px #ffffff;">BINGO</h1>
        <p class="lead font-weight-normal slide-in-blurred-top">Best platform for selling your goods in a modern way.</p>
+
+<!-- TRYING THE PHP GET METHOD , WORKING ONE -->
+       <?php
+       if(isset($_GET['name'])){
+      $value = $_GET["name"];
+      echo $value;
+    };
+      ?>
        <a class="btn btn-outline-info" href="login.php">Go shopping!</a>
      </div>
      </div>
