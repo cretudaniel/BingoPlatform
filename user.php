@@ -12,6 +12,7 @@ else {
  <!DOCTYPE html>
  <html lang="en">
  <head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -113,15 +114,18 @@ $notaf = $notaf/$i;
                         <div class="profile-img">
                         <!--  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> -->
                         <?php
-                          echo "<img src=".$photo.">"
+                          echo "<img src=imagini/".$photo."  style=\"border-radius:1rem;\">"
                             ?>
-                            <div class="file btn btn-lg btn-primary">
+                            <form action="adauga-imagine.php" method="POST">
+                            <div class="file btn btn-lg btn-primary"  style="border-radius:1rem;">
                                 Change Photo
-                                <input type="file" name="file" id="imagine"/>
+                                <input type="file" name="imagine" id="imagine"/>
+                                <span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
                             </div>
                           <!--  <button id="1" class="btn btn-success">Press to Change</button> -->
                         </div>
                     </div>
+                    </form>
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
@@ -169,7 +173,7 @@ $notaf = $notaf/$i;
                             <p>User Settings</p>
 
                             <!-- THE MODAL FOR THE PASSWORD  -->
-
+                            <a href="" id="1">Chage the photo</a><br/>
                             <a href="" data-toggle="modal" data-target=".bd-example-modal-lg">Change password</a><br/>
                             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                               <div class="modal-dialog modal-lg">
@@ -314,7 +318,7 @@ $notaf = $notaf/$i;
                                     </div>
                                 </div>
                               </div>
-                            </div>
+                            </div> <br/>
 
 
                             <p>Listing category</p>
@@ -335,7 +339,6 @@ $notaf = $notaf/$i;
                                             <div class="col-md-6">
                                                 <p><?php if ($usercat2=="1") {
                                                   echo "ADMINISTRATOR";
-                                                  echo $usercat2;
                                                 }
                                                 elseif ($usercat2=="0") {
                                                   echo"NORMAL USER";
@@ -403,52 +406,44 @@ $notaf = $notaf/$i;
                                         </div>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
+
+<!-- ITEMS YOU SELL -->
+                            <div class="row">
+                              <?php
+
+
+                             $result2 = mysqli_query($db,"SELECT * FROM items WHERE user_name = '$username' ");
+
+                             while($row = mysqli_fetch_array($result2, MYSQLI_BOTH)){
+                                 // USERNAME IS ALREADY SAVED
+
+                                 $name = $row['name'];
+                                 $photo = $row['photo'];
+                                 $age = $row['year'];
+                                 $price = $row['price'];
+                                 $id = $row['id'];
+
+                            echo "<div class=\"col-md-4\">
+                              <figure class=\"card card-product\">
+                                <div class=\"img-wrap\">
+                                  <img src=\"imagini/".$photo."\">
+                                  <a class=\"btn-overlay\" href=\"#\"><i class=\"fa fa-search-plus\"></i> Quick view</a>
                                 </div>
+                                <figcaption class=\"info-wrap\">
+                                  <h6 class=\"title text-dots\" style=\"text-overflow: ellipsis; overflow: hidden; white-space: nowrap;\"><a href=\"#\">".$name."</a></h6>
+                                  <div class=\"action-wrap\">
+                                    <a href=\"#\" class=\"btn btn-primary btn-sm float-right\"> Order </a>
+                                    <div class=\"price-wrap h5\">
+                                      <span class=\"price-new\">$".$price."</span>
+                                    </div> <!-- price-wrap.// -->
+                                  </div> <!-- action-wrap -->
+                                </figcaption>
+                              </figure> <!-- card // -->
+                            </div> <!-- col // -->";
+                           };
+                           ?>
+                            </div> <!-- row.// -->
+
                             </div>
                             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                                         <div class="row">
@@ -484,9 +479,6 @@ $notaf = $notaf/$i;
             </form>
         </div>
 
-
- </br>
-
  <footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
  <div class="container text-center">
  <!--Facebook-->
@@ -499,10 +491,10 @@ $notaf = $notaf/$i;
  <a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-google"></i></a>&nbsp;&nbsp;
  </div>
  </footer>
-
-   <script src="js/jquery.js"> </script>
+   <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    <script>
@@ -511,10 +503,12 @@ $notaf = $notaf/$i;
 			event.preventDefault();
       var imagine_user;
       imagine_user= $("#imagine")[0].files[0];
+      var formular = new FormData();
+      formular.append("imagine", imagine_user);
       $.ajax({
   url: "adauga-imagine.php",
   method:"POST",
-  data: imagine-user,
+  data: formular,
   processData: false,
   contentType:false,
   success: function(data){
