@@ -46,10 +46,11 @@ if (isset($_SESSION['username'])) {
 
       <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none; ">BINGO</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
+
       <a class="p-3 text-dark" href="contact.php">Contact</a>
       <a class="p-3 text-dark" href="#">Language</a>
-
-
+      <input class=" mr-sm-2" placeholder="Search for an item" style="padding-bottom:6px;">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
       <?php
       if($val_check="1"){
@@ -70,6 +71,7 @@ if (isset($_SESSION['username'])) {
 
 
   <!-- THE END OF THE HEADER -->
+
 
   <!-- THE MAIN ANNOUCEMENT ABOUT THE APP WITH A CREATE ACCOUNT BUTTON-->
 

@@ -426,7 +426,7 @@ $notaf = $notaf/$i;
                             echo "<div class=\"col-md-4\">
                               <figure class=\"card card-product\">
                                 <div class=\"img-wrap\">
-                                  <img src=\"imagini/".$photo."\">
+                                  <img src=\"imagini/".$photo."\" style=\"min-height=100%;\">
                                   <a class=\"btn-overlay\" href=\"#\"><i class=\"fa fa-search-plus\"></i> Quick view</a>
                                 </div>
                                 <figcaption class=\"info-wrap\">
