@@ -1,0 +1,16 @@
+#button {
+
+  a {
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    height: 23px;
+    border: $green 1px solid;
+    align-items: flex-end;
+    width: 85%;
+
+    img {
+      height: 35px;
+    }
+  }
+}

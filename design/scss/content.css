@@ -1,0 +1,7 @@
+main {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  margin-top: 60px;
+  flex-direction: column; }
+
+/*# sourceMappingURL=content.css.map */

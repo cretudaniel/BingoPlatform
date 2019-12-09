@@ -1,0 +1,21 @@
+#searchbar {
+
+  input {
+    width: 100%;
+    border: 1px solid $green;
+    border-radius: 50px;
+    height: 23px;
+    padding: 5px;
+    color: $green;
+    margin-left: 7px;
+  }
+
+  #main-searchbar {
+
+    &::placeholder {
+        color: $green;
+        opacity: 1;
+    }
+
+  }
+}

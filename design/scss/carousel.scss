@@ -1,0 +1,37 @@
+.carousel {
+  position: fixed;
+  width: 90%;
+  margin: 50px 0px;
+  height: 100px;
+  display: flex !important;
+
+  button {
+    background: black;
+  }
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-track {
+  display: flex;
+  height: 100%;
+
+  .slick-slide {
+    margin: 1px;
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+
+
+.slick-elements {
+  margin: 0 5px;
+
+  img {
+    width: 100%;
+
+  }
+}

@@ -1,0 +1,94 @@
+// MEDIA QUERIES
+
+
+// MIXINS
+
+
+// FONTS
+$font : Mollen;
+
+@font-face {
+  font-family: $font;
+  src: url("../font/Mollen Personal Use-Regular.otf");
+}
+
+// COLORS
+$green : #84dba1;
+$blue : #2a319b;
+
+.blue {
+  background-color: $blue;
+}
+
+.green {
+  background-color: $green;
+}
+
+.white {
+  background-color: white;
+}
+
+// INITIALISATION
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; //horizontal
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $blue;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 16px;
+}
+
+input {
+  outline: none;
+}
+
+// IMPORTS
+
+@import "grid";
+
+@import "header";
+
+@import "nav/logo";
+@import "nav/language";
+@import "nav/searchbar";
+@import "nav/button";
+@import "nav/login";
+@import "nav/menu";
+@import "hover/nav";
+
+@import "content";
+
+@import "carousel";
+@import "home";
+
+@import "sign-in";
+
+@import "register-form";
+@import "hover/register-form";
+
+@import "footer";
+

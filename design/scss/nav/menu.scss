@@ -1,0 +1,48 @@
+#menu {
+  z-index: 10;
+
+  a {
+    flex-direction: column;
+    color: white;
+
+    img {
+      height: 25px;
+      margin: 5px;
+    }
+  }
+}
+
+.menu-section {
+  position: absolute;
+  margin: 0;
+  left: 0;
+  right: 0;
+  background-color: $blue;
+  color: white;
+  overflow: hidden;
+  z-index: 8;
+  flex-direction: column;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 24px;
+  }
+}
+
+.closed {
+  opacity:0;
+  height:0;
+  bottom: -100%;
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 1s, transform 1s;
+}
+
+.opened {
+  bottom: 0;
+  height:100%;
+  opacity:1;
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 0.4s, transform 0.4s;
+}

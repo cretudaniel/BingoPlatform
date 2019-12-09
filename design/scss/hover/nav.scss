@@ -1,0 +1,76 @@
+#button {
+
+  a {
+
+    &:hover {
+      background-color: #FFFFFF;
+      color: $green;
+    }
+  }
+}
+
+#language {
+
+  ul li {
+
+    &:hover {
+      background-color: white;
+      border: $blue 2px solid;
+
+      a{
+        color: $blue;
+      }
+    }
+  }
+
+  &:hover {
+
+    background-color: white;
+    border: $blue 2px solid;
+    border-top: none;
+
+    #anchor1 {
+      color: $blue;
+    }
+
+    ul {
+      visibility: visible;
+    }
+  }
+}
+
+#login {
+
+
+  ul li {
+
+    &:hover {
+      background-color: $blue;
+
+      a{
+        color: white;
+      }
+    }
+  }
+
+  #anchor2{
+
+    &:hover {
+
+      background-color: $blue;
+      border-top: none;
+      color: white;
+
+    }
+  }
+
+
+  &:hover {
+
+    ul {
+      visibility: visible;
+    }
+  }
+
+
+}

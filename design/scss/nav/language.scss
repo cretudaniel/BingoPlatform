@@ -1,0 +1,32 @@
+#language {
+  border: $blue 2px solid;
+  border-top: none;
+
+  a {
+    color: white;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  svg {
+    height: 20px;
+  }
+
+  ul {
+    background-color: $blue;
+    visibility: hidden;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    li {
+      width: -webkit-fill-available;
+      padding: 5px;
+
+
+    }
+  }
+}

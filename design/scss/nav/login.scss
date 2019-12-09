@@ -1,0 +1,33 @@
+#login {
+  border: 2px solid white;
+  border-bottom: none;
+  border-top: none;
+
+  a {
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 30px;
+      padding: 5px;
+    }
+  }
+
+  ul {
+    background-color: white;
+    border: $blue 2px solid;
+    visibility: hidden;
+
+    flex-direction: column;
+
+
+    li {
+      width: -webkit-fill-available;
+      padding: 5px;
+
+
+    }
+  }
+}
