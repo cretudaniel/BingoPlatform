@@ -33,22 +33,93 @@ else {
 
 </head>
 <body>
-  asas
+<br> <br>
  <?php
-$value = $_GET["name"];
-echo $value;
+// $value = $_GET["name"];
+// echo $value;
 ?>
+<div class="container"
+  <div class="col-12 jumbotron">
+<h1 class="text-center " >ADAUGARE PRODUS</h1>
+		<span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
+		<br />
+<form action="adauga.php" method="POST">
+		Name: <input type="text" class="form-control" id="nume" name="nume"
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"> <br />
+		Price: <input type="text" class="form-control" id="pret" name="pret"
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"> <br />
+		Category:
+		<select class="form-control" id="categorie" name="categorie"
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+
+			<option>Cars</option>
+			<option>Phones</option>
+			<option>Houses</option>
+			<option>TV,Audio and Photo</option>
+			<!-- <option>Consumabile</option>
+			<option>Gradina</option> -->
+		</select>
+    <br />
+    Location : <input type="text" id="locatie"name="locatie" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
+    <br />
+     Photo : <input type="file" id="imagine" name="imagine" class="btn-secondary" />
+ 		<br /><br /><br />
+		<button class="btn btn-success" id="1"
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+    List the product</button>
+    <a href="productlist.php" class="btn btn-success" style="float:right;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
+      Product list //NOT IN USE
+  </a>
+  </form>
+  </div>
+</div>
 
 
-
-
-
-<script src="js/jquery.js"> </script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script>
+	$(document).ready(function () {
+		$("#1").click(function (event){
+			event.preventDefault();
+	var numeProdus;
+	var pretProdus;
+	var categorieProdus;
+  var locatieProdus;
+  var imagineProdus
+	numeProdus= $("#nume").val();
+	pretProdus= $("#pret").val();
+	categorieProdus= $("#categorie").val();
+  locatieProdus= $("#locatie").val();
+  imagineProdus= $("#imagine")[0].files[0];
+
+var formular = new FormData();
+formular.append("nume", numeProdus);
+formular.append("pret", pretProdus);
+formular.append("categorie", categorieProdus);
+formular.append("locatie", locatieProdus);
+formular.append("imagine", imagineProdus);
+
+
+$.ajax({
+  url: "adaugaprodus.php",
+  method:"POST",
+  data: formular,
+  processData: false,
+  contentType:false,
+  success: function(data){
+    $("verde").html(data);
+    $("verde").fadeIn('slow');
+  },
+});
+});
+	});
+</script>
 </body>
 
 </html>
