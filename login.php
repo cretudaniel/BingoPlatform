@@ -19,9 +19,17 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $bsdiper='1';
+    $result = mysqli_query($db,"SELECT * FROM banlist WHERE username='$username' ");
+    while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+      $error=2;
+      header("Location: signin.php");
+    };
     $query = mysqli_query($db, "SELECT id FROM user WHERE username='$username' AND password='$password'");
 
     if (mysqli_num_rows($query)) {
+      if($error=="2"){
+        header("Location: signin.php");
+      }
         $error = 0;
         $_SESSION['username'] = $username;
         while ($row = mysqli_fetch_array($query, MYSQLI_BOTH)) {

@@ -33,6 +33,36 @@ else {
 
 </head>
 <body>
+  <!-- Here is the header , sticky one-->
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm sticky-top" style="padding-left:10px; padding-right:10px;">
+
+      <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none;">BINGO</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-3 text-dark" href="contact.php">Contact</a>
+      <a class="p-3 text-dark" href="#">Language</a>
+
+
+
+      <?php
+      if($val_check="1"){
+        // echo '<a class="btn btn-outline-primary" href="logout.php">LOG OUT</a>';
+  //GOOD WORKING THING DOWN HERE
+       echo '<a class="btn btn-outline-primary" href="user.php">You are logged-in as: '.$username.'</a>';
+  //GOOD WORKING THING UP HERE
+        //echo $username;
+        //console.log($val_check);
+      }else{
+      echo '<a class="btn btn-outline-primary" href="signin.php">Sign up</a>';
+      //bsdiper
+    }
+    ?>
+    <a class="btn btn-outline-danger" href="logout.php">X</a>
+    </nav>
+    </div>
+
+
+  <!-- THE END OF THE HEADER -->
 <br> <br>
  <?php
 // $value = $_GET["name"];
@@ -75,7 +105,18 @@ else {
   </div>
 </div>
 
-
+<footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
+<div class="container text-center">
+<!--Facebook-->
+<a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
+<!--Bitbucket-->
+<a class="btn btn-social-icon btn-lg btn-bitbucket" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-bitbucket"></i></a>&nbsp;&nbsp;
+<!--Twitter-->
+<a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+<!--GMAIL-->
+<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-google"></i></a>&nbsp;&nbsp;
+</div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- <script src="js/jquery-3.4.1.min.js"></script> -->

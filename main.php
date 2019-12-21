@@ -103,7 +103,43 @@ if (isset($_SESSION['username'])) {
 
       <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light ">
       </section>
+<!-- TEST FOR THE ID DELETE VIEWER ETC -->
+      <?php
+          $result = mysqli_query($db,"SELECT * FROM user");
 
+            echo "
+            <table>
+              <tr>
+              <th>
+              USER
+              </th>
+              <th>
+              ID
+              </th>
+              </tr>";
+              while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+              echo "<tr>
+                <td>
+                  ";
+                  $username2=$row['username'];
+                  $id=$row['id'];
+                  echo $username2;
+                echo "
+                </td>
+                <td>".$id."
+                </td>
+                <td>
+                <button type='button' class=\"deletebutton\" id='$id' data-id='$id' name='id2' onclick=\"window.location.href = 'restoftheusers.php?id=".$id."';\"> SEE </button>
+                </td>
+              </tr>
+            ";
+          };
+          echo "
+            </table>";
+
+// href= url custom
+// get method
+       ?>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
       </div>
@@ -169,8 +205,21 @@ if (isset($_SESSION['username'])) {
  </footer>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <!-- <script>
+   $(document).ready(function(){
+     $(".deletebutton").click(function(event){
+       var userid=$(this).data('id');
+       $.post("restoftheusers.php",{id2: userid});
+       console.log(userid);
+     });
+   });
+   </script> -->
+
 </body>
 </html>
