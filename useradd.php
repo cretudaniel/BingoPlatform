@@ -29,3 +29,14 @@ if(mysqli_insert_id($db)){
 else{
   echo mysqli_error($db);
 }
+?>
+
+<!--Back Button EVA-->
+<!doctype html>
+<html>
+  <body>
+    <ul class="nav-list" style="text-decoration:none;">
+      <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
+    </ul>
+  </body>
+</html>

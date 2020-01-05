@@ -25,7 +25,7 @@
 <nav class="site-header sticky-top py-1">
   <div class="container d-flex flex-column flex-md-row justify-content-between" style="padding-left:10px; padding-right:10px; max-width:1620px;">
       <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold;font-size:18px;">BINGO </a>
-      <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold; vertical-align:middle;">YOU NEED TO CREATE AN ACCOUNT  FIRST </a>
+      <a class="py-2 d-none d-md-inline-block" href="#" style="font-weight:bold; vertical-align:middle;">YOU NEED TO CREATE AN ACCOUNT  FIRST </a>
     </div>
   </nav>
 
@@ -59,11 +59,10 @@
 
 </p>
     <button class="btn btn-success" id="1"
-    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float:left;">
+    style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
      Create this account</button>
     <a href="login.php">
-    <input type="button" value="I have an account" class="btn btn-info" style="float: right;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"></a>
+    <input type="button" value="I have an account" class="btn btn-info" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"></a>
           </form>
       </div>
     </div>
@@ -104,10 +103,11 @@
               <br>
               <ul class="nav-list" style="text-decoration:none;">
                 <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
-                <li><a href="#">CATEGORY</a></li>
-                <li><a href="#">REGISTER</a></li>
-                <li><a href="#">CONTACT</a></li>
-
+                <li style="text-decoration:none;"><a href="whoarewe.php">WHO ARE WE?</a></li>
+                <li style="text-decoration:none;"><a href="#">CATEGORY</a></li>
+                <li style="text-decoration:none;"><a href="signin.php">REGISTER</a></li>
+                <li style="text-decoration:none;"><a href="contact.php">CONTACT</a></li>
+                <li style="text-decoration:none;"><a href="dropdown.php">PRODUCTS</a></li>
               </ul>
             </div>
           </div>

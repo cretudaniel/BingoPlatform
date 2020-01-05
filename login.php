@@ -124,10 +124,11 @@ if (isset($_POST['submit']) && $error == 1) {
                   <br>
                   <ul class="nav-list" style="text-decoration:none;">
                     <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
-                    <li><a href="#">CATEGORY</a></li>
-                    <li><a href="#">REGISTER</a></li>
-                    <li><a href="#">CONTACT</a></li>
-
+                    <li style="text-decoration:none;"><a href="whoarewe.php">WHO ARE WE?</a></li>
+                    <li style="text-decoration:none;"><a href="#">CATEGORY</a></li>
+                    <li style="text-decoration:none;"><a href="signin.php">REGISTER</a></li>
+                    <li style="text-decoration:none;"><a href="contact.php">CONTACT</a></li>
+                    <li style="text-decoration:none;"><a href="dropdown.php">PRODUCTS</a></li>
                   </ul>
                 </div>
               </div>

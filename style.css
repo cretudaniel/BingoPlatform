@@ -1,0 +1,90 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    background-image: url(BackgroundWhite.jpg);
+    <!--
+    Backgroun dark=linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5))
+    -->
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-nav
+{
+    float: right;
+    list-style: none;
+    margin-tip: 30px;
+}
+
+.main-nav li
+{
+    display: inline-block;
+}
+
+.main-nav li a
+{
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.main-nav li.active a
+{
+  <!-- this is for to know where are we -->
+    border: 1px solid black;
+}
+
+.main-nav li a:hover
+{
+  <!-- this is the square of every page that are in the top -->
+    border: 1px solid black;
+}
+
+.logo img
+{
+    width: 150px;
+    height: auto;
+    float: left;
+}
+
+body
+{
+    font-family: monospace;
+}
+
+.row
+{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.button
+{
+    margin-top: 30px;
+    margin-left: 450px;
+}
+
+.btn
+{
+    border: 1px solid black;
+    padding: 10px 30px;
+    color: black;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.btn-one
+{
+    background-color: darkgreen;
+    font-family: "Roboto", sans-serif;
+}

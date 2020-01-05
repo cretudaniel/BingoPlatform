@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) {
 
 <nav class="site-header sticky-top py-1">
   <div class="container d-flex flex-column flex-md-row justify-content-between" style="padding-left:10px; padding-right:10px; max-width:1620px;">
-      <a class="py-2 d-none d-md-inline-block" href="main.html" style="font-weight:bold;">BINGO </a>
+      <a class="py-2 d-none d-md-inline-block" href="main.php" style="font-weight:bold;">BINGO </a>
       <a class="py-2 d-none d-md-inline-block">&nbsp</a>
       <a class="py-2 d-none d-md-inline-block">&nbsp</a>
       <a class="py-2 d-none d-md-inline-block">&nbsp</a>
@@ -65,17 +65,17 @@ if (isset($_SESSION['username'])) {
        <h1 class="display-4 font-weight-bold slide-in-blurred-top">BINGO</h1>
        <p class="lead font-weight-normal slide-in-left">Best platform for selling your goods in a modern way.</p>
        <a class="btn btn-outline-secondary" href="login.php">Go shopping!</a>
-     </div>
-     <div class="product-device shadow-sm d-none d-md-block"></div>
-     <div class="product-device product-device-2 shadow-sm d-none d-md-block "></div>
-    </div>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block "></div>
+</div>
 
     <!-- THE END OF THE MAiN ANNOUCEMENT -->
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-saas
-    </div>
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    saas
+</div>
 
-  <div class="container-fluid">
+<div class="container-fluid">
     <p>asdasdasd </p>
 </div>
 <!-- In this footer i can't get the text color white so i need to use everytime a style instruction
@@ -112,9 +112,11 @@ saas
               <br>
               <ul class="nav-list" style="text-decoration:none;">
                 <li style="text-decoration:none;"><a href="main.php">HOME</a></li>
-                <li><a href="#">CATEGORY</a></li>
-                <li><a href="#">REGISTER</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li style="text-decoration:none;"><a href="whoarewe.php">WHO ARE WE?</a></li>
+                <li style="text-decoration:none;"><a href="#">CATEGORY</a></li>
+                <li style="text-decoration:none;"><a href="signin.php">REGISTER</a></li>
+                <li style="text-decoration:none;"><a href="contact.php">CONTACT</a></li>
+                <li style="text-decoration:none;"><a href="dropdown.php">PRODUCTS</a></li>
 
               </ul>
             </div>
