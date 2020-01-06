@@ -104,7 +104,12 @@ while($row = mysqli_fetch_array($result2, MYSQLI_BOTH)){
    //  echo "1";
 //    }
 };
+if($i>0){
 $notaf = $notaf/$i;
+}
+else {
+  $notaf = 10;
+}
 ?>
 
    <div class="container emp-profile">

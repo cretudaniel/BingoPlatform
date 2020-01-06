@@ -131,7 +131,7 @@ else {
   	phone= $("#phone").val();
     message= $("#message").val();
   	console.log(name, email, phone);
-  $.post("messagedd.php", {name: name, email: email ,phone: phone, message: message},
+  $.post("contactadd.php", {name: name, email: email ,phone: phone, message: message},
   function(data){
   		$("#verde").html(data);
   		$("#verde").fadeIn('slow');

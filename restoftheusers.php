@@ -114,7 +114,12 @@ while($row = mysqli_fetch_array($result2, MYSQLI_BOTH)){
    //  echo "1";
 //    }
 };
+if($i>0){
 $notaf = $notaf/$i;
+}
+else {
+  $notaf = 10;
+}
 ?>
 
    <div class="container emp-profile">
@@ -127,11 +132,7 @@ $notaf = $notaf/$i;
                           echo "<img src=imagini/".$photo."  style=\"border-radius:1rem;\">"
                             ?>
                             <form action="adauga-imagine.php" method="POST">
-                            <div class="file btn btn-lg btn-primary"  style="border-radius:1rem;">
-                                Change Photo
-                                <input type="file" name="imagine" id="imagine"/>
-                                <span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
-                            </div>
+
                           <!--  <button id="1" class="btn btn-success">Press to Change</button> -->
                         </div>
                     </div>
@@ -148,10 +149,10 @@ $notaf = $notaf/$i;
                                     <p class="proile-rating">NUMBER OF REVIEWS : <span><?php echo"$i"; ?></span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About You</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About him</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Items you sell</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Items he sell</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
@@ -185,163 +186,14 @@ $notaf = $notaf/$i;
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>User Settings</p>
-
-                            <!-- THE MODAL FOR THE PASSWORD  -->
-                            <a href="" id="1">Chage the photo</a><br/>
-                            <a href="" data-toggle="modal" data-target=".bd-example-modal-lg">Change password</a><br/>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="position-relative overflow-hidden p-3 p-md-auto m-md-0 text-center" style="  background: -webkit-linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* Chrome 10-25, Safari 5.1-6 */
-                                  background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                                      <div class="col-md-auto p-lg-5 mx-auto my-5">
-                                        <?php
-                                        if (isset($_POST['submit'])) {
-                                            $username = $_POST['username'];
-                                            $password = $_POST['password'];
-                                            $newpass = $_POST['newpass'];
-                                            $query = mysqli_query($db, "SELECT id FROM user WHERE username='$username' AND password='$password'");
-                                            if (mysqli_num_rows($query)) {
-                                                $sql="UPDATE user SET password='$newpass' WHERE username='$username'";
-                                                if (mysqli_query($db, $sql)) {
-                                                    //  echo "Record updated successfully";
-                                                  } else {
-                                                      echo "Error updating record: " . mysqli_error($conn);
-                                                    }
-                                            }
-
-                                        }
-                                        ?>
-                                        <div class="col-8 offset-2 jumbotron"
-                                         style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-                                        <p class="display-3 font-weight-bold slide-in-blurred-top "style="color: #000000;text-shadow: 2px 2px 4px #ffffff; font-size:40px;">PASSWORD CHANGE</p>
-                                         <br>
-                                          <br>
-                                              <form action="user.php" method="POST">
-                                                  <input type="text" class="form-control" name="username" placeholder="USERNAME">
-                                                  <br/>
-                                                  <input type="password" class="form-control" name="password" placeholder="OLD PASSWORD">
-                                                  <br/>
-                                                  <input type="password" class="form-control" name="newpass" placeholder="NEW PASSWORD">
-                                                  <br/>
-                                                  <input type="submit" class="btn btn-info" value="CHANGE THE PASSWORD" name="submit" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float: center;">
-
-                                              </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- THE MODAL FOR THE EMAIL -->
-
-                            <a href="" data-toggle="modal" data-target=".bd-example-modal-lg-2">Change email</a><br/>
-                            <div class="modal fade bd-example-modal-lg-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="position-relative overflow-hidden p-3 p-md-auto m-md-0 text-center" style="  background: -webkit-linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* Chrome 10-25, Safari 5.1-6 */
-                                  background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                                      <div class="col-md-auto p-lg-5 mx-auto my-5">
-                                        <?php
-                                        if (isset($_POST['submit2'])) {
-                                            $username = $_POST['username'];
-                                            $password = $_POST['password'];
-                                            $newemail = $_POST['newemail'];
-                                            $query = mysqli_query($db, "SELECT id FROM user WHERE username='$username' AND password='$password'");
-                                            if (mysqli_num_rows($query)) {
-                                                $sql="UPDATE user SET mail='$newemail' WHERE username='$username'";
-                                                if (mysqli_query($db, $sql)) {
-                                                    //  echo "Record updated successfully";
-                                                  } else {
-                                                      echo "Error updating record: " . mysqli_error($conn);
-                                                    }
-                                            }
-
-                                        }
-                                        ?>
-                                        <div class="col-8 offset-2 jumbotron"
-                                         style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-                                        <p class="display-3 font-weight-bold slide-in-blurred-top "style="color: #000000;text-shadow: 2px 2px 4px #ffffff; font-size:40px;">EMAIL CHANGE</p>
-                                         <br>
-                                          <br>
-                                              <form action="user.php" method="POST">
-                                                  <input type="text" class="form-control" name="username" placeholder="USERNAME">
-                                                  <br/>
-                                                  <input type="password" class="form-control" name="password" placeholder="PASSWORD">
-                                                  <br/>
-                                                  <input type="password" class="form-control" name="newemail" placeholder="NEW EMAIL">
-                                                  <br/>
-                                                  <input type="submit" class="btn btn-info" value="CHANGE THE EMAIL" name="submit2" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float: center;">
-
-                                              </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!--  THE CHANGE NAME MODAL  -->
-
-                            <a href="" data-toggle="modal" data-target=".bd-example-modal-lg-3">Change the name</a>
-                            <div class="modal fade bd-example-modal-lg-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="position-relative overflow-hidden p-3 p-md-auto m-md-0 text-center" style="  background: -webkit-linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* Chrome 10-25, Safari 5.1-6 */
-                                  background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                                      <div class="col-md-auto p-lg-5 mx-auto my-5">
-                                        <?php
-                                        if (isset($_POST['submit3'])) {
-                                            $username = $_POST['username'];
-                                            $password = $_POST['password'];
-                                            $name = $_POST['name'];
-                                            $surname = $_POST['surname'];
-                                            $query = mysqli_query($db, "SELECT id FROM user WHERE username='$username' AND password='$password'");
-                                            if (mysqli_num_rows($query)) {
-                                                $sql="UPDATE user SET name='$name' WHERE username='$username'";
-                                                $sql="UPDATE user SET surname='$surname' WHERE username='$username'";
-                                                if (mysqli_query($db, $sql)) {
-                                                    //  echo "Record updated successfully";
-                                                  } else {
-                                                      echo "Error updating record: " . mysqli_error($conn);
-                                                    }
-                                            }
-
-                                        }
-                                        ?>
-                                        <div class="col-8 offset-2 jumbotron"
-                                         style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-                                        <p class="display-3 font-weight-bold slide-in-blurred-top "style="color: #000000;text-shadow: 2px 2px 4px #ffffff; font-size:40px;">EMAIL CHANGE</p>
-                                         <br>
-                                          <br>
-                                              <form action="user.php" method="POST">
-                                                  <input type="text" class="form-control" name="username" placeholder="USERNAME">
-                                                  <br/>
-                                                  <input type="password" class="form-control" name="password" placeholder="PASSWORD">
-                                                  <br/>
-                                                  <input type="text" class="form-control" name="name" placeholder="NAME">
-                                                  <br/>
-                                                  <input type="text" class="form-control" name="surname" placeholder="SURNAME">
-                                                  <br/>
-                                                  <input type="submit" class="btn btn-info" value="CHANGE NAME AND SURNAME" name="submit3" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); float: center;">
-
-                                              </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                            </div> <br/>
 
 
-                            <p>Listing category</p>
-                            <a href="">Sell an item</a><br/>
-                            <a href="">Pay for an item</a><br/>
-                            <a href="">Relist an item</a><br/>
-                            <a href="">Delete an item</a><br/>
-                            <a href="">Donate to us</a><br/>
+                            <p>Things you can do</p>
+                            <a href="">Review him</a><br/>
+                            <a href="">Report him</a><br/>
+                            <a href="">Block him</a><br/>
+                            <a href="">Message him</a><br/>
+                            <a href="">Call him</a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
