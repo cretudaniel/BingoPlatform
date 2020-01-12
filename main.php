@@ -29,13 +29,14 @@ if (isset($_SESSION['username'])) {
 -->
   <!-- Extra CSS that i need -->
   <link href="/webapp/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/webapp/css/maincss.css" rel="stylesheet">
+
    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="/webapp/css/animations.css" rel="stylesheet">
   <!-- The awesome font icon pack -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link href="/webapp/css/maincss.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link href="css2.css?version=5" rel="stylesheet">
 </head>
 
 <body style="overflow:hidden;">
@@ -44,13 +45,13 @@ if (isset($_SESSION['username'])) {
 
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow sticky-top" style="padding-left:10px; padding-right:10px;">
 
-      <h5 class="my-0 mr-md-auto font-weight-bold" > <a class="p-3" href="main.php" style="text-decoration:none; ">BINGO</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-bold bettersize" > <a class="p-3" href="main.php" style="text-decoration:none; ">BINGO</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
-
-      <a class="p-3 text-dark" href="contact.php">Contact</a>
-      <a class="p-3 text-dark" href="#">Language</a>
-      <input class=" mr-sm-2" placeholder="Search for an item" style="padding-bottom:6px;">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <a class="p-3 text-dark bold" href="item.php">List an item</a>
+      <a class="p-3 text-dark bold" href="contact.php">Contact</a>
+      <a class="p-3 text-dark bold" href="#">Language</a>
+      <!-- <input class=" mr-sm-2 bold padding" placeholder="Search for an item" style="padding-bottom:6px;">
+      <button class="btn btn-outline-success my-2 my-sm-0 bold" type="submit">Search</button> -->
 
       <?php
       if($val_check="1"){
@@ -75,21 +76,38 @@ if (isset($_SESSION['username'])) {
 
   <!-- THE MAIN ANNOUCEMENT ABOUT THE APP WITH A CREATE ACCOUNT BUTTON-->
 
-<div class="position-relative overflow-visible p-6 p-md-5 m-md-0 text-center bg-light">
+<!-- <div class="position-relative overflow-visible p-6 p-md-5 m-md-0 text-center bg-light">
   <div class="col-md-5 p-lg-3 mx-auto my-3 ">
        <h1 class="display-3 font-weight-bold slide-in-blurred-top "style="color: #008bff;text-shadow: 2px 2px 4px #ffffff;">BINGO</h1>
        <p class="lead font-weight-normal slide-in-blurred-top">Best platform for selling your goods in a modern way.</p>
-
-<!-- TRYING THE PHP GET METHOD , WORKING ONE -->
-       <?php
-       if(isset($_GET['name'])){
-      $value = $_GET["name"];
-      echo $value;
-    };
-      ?>
        <a class="btn btn-outline-info" href="login.php">Go shopping!</a>
      </div>
-     </div>
+   </div> -->
+<div class="firstthing">
+  <h1>Bingo</h1>
+  <h2>The best way to exchange your old stuff</h2>
+  <form class="firstform">
+    <div class="form-left">
+    <label> Just go to the page and find items that are listed on sale</label>
+    <p>
+      The easiest way to search for the desired product!
+    </p>
+  </div>
+    <input type="button" value="Search Now" id="cta-btn" onclick="window.location.href='category.php'">
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="space">
+  </div>
+  <div class="space">
+  </div>
+  <div class="space">
+  </div>
+</div>
+
 
    <!-- THE END OF THE MAiN ANNOUCEMENT -->
    <!--
@@ -101,46 +119,45 @@ if (isset($_SESSION['username'])) {
       -->
 
 
-      <div class="position-relative overflow-visible p-0 p-md5-0 m-md-0 bg-light ">
+<div>
       </section>
 <!-- TEST FOR THE ID DELETE VIEWER ETC -->
       <?php
-          $result = mysqli_query($db,"SELECT * FROM user");
-
-            echo "
-            <table>
-              <tr>
-              <th>
-              USER
-              </th>
-              <th>
-              ID
-              </th>
-              </tr>";
-              while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
-              echo "<tr>
-                <td>
-                  ";
-                  $username2=$row['username'];
-                  $id=$row['id'];
-                  echo $username2;
-                echo "
-                </td>
-                <td>".$id."
-                </td>
-                <td>
-                <button type='button' class=\"deletebutton\" id='$id' data-id='$id' name='id2' onclick=\"window.location.href = 'restoftheusers.php?id=".$id."';\"> SEE </button>
-                </td>
-              </tr>
-            ";
-          };
-          echo "
-            </table>";
+          // $result = mysqli_query($db,"SELECT * FROM user");
+          //
+          //   echo "
+          //   <table>
+          //     <tr>
+          //     <th>
+          //     USER
+          //     </th>
+          //     <th>
+          //     ID
+          //     </th>
+          //     </tr>";
+          //     while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          //     echo "<tr>
+          //       <td>
+          //         ";
+          //         $username2=$row['username'];
+          //         $id=$row['id'];
+          //         echo $username2;
+          //       echo "
+          //       </td>
+          //       <td>".$id."
+          //       </td>
+          //       <td>
+          //       <button type='button' class=\"deletebutton\" id='$id' data-id='$id' name='id2' onclick=\"window.location.href = 'restoftheusers.php?id=".$id."';\"> SEE </button>
+          //       </td>
+          //     </tr>
+          //   ";
+          // };
+          // echo "
+          //   </table>";
 
 // href= url custom
 // get method
        ?>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
       </div>
 
@@ -191,7 +208,7 @@ if (isset($_SESSION['username'])) {
       </footer>
 -->
 
-      <footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
+      <footer id="sticky-footer" class="py-3  border-top border-info-2 shadow-sm text-white marginbot0" style="bottom:0px;position:absolute; width:100%; background-color: /*#e5e5e5*/ #262626 ;">
    <div class="container text-center">
      <!--Facebook-->
      <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;

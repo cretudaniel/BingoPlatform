@@ -71,6 +71,8 @@ else {
 <div class="container"
   <div class="col-12 jumbotron">
 <h1 class="text-center " >ADAUGARE PRODUS</h1>
+<?php
+?>
 		<span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
 		<br />
 <form action="adauga.php" method="POST">
@@ -82,15 +84,34 @@ else {
 		<select class="form-control" id="categorie" name="categorie"
     style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
 
-			<option>Cars</option>
-			<option>Phones</option>
-			<option>Houses</option>
-			<option>TV,Audio and Photo</option>
+			<option>cars</option>
+			<option>bikes</option>
+			<option>scooters</option>
+			<option>busses</option>
+      <option>trucks</option>
+			<option>smarttv</option>
+			<option>phones</option>
+			<option>watches</option>
+      <option>pc</option>
+      <option>laptops</option>
+      <option>house for sale</option>
+      <option>house for rent</option>
+      <option>lands</option>
+      <option>cats</option>
+      <option>dogs</option>
+      <option>fishs</option>
+      <option>birds</option>
+      <option>clothes for him</option>
+      <option>clothes for her</option>
+      <option>clothes for kids</option>
+
 			<!-- <option>Consumabile</option>
 			<option>Gradina</option> -->
 		</select>
     <br />
     Location : <input type="text" id="locatie"name="locatie" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
+    <br />
+    Phone Number : <input type="text" id="phone"name="phone" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
     <br />
      Photo : <input type="file" id="imagine" name="imagine" class="btn-secondary" />
  		<br /><br /><br />
@@ -132,11 +153,13 @@ else {
 	var pretProdus;
 	var categorieProdus;
   var locatieProdus;
-  var imagineProdus
+  var imagineProdus;
+  var phone
 	numeProdus= $("#nume").val();
 	pretProdus= $("#pret").val();
 	categorieProdus= $("#categorie").val();
   locatieProdus= $("#locatie").val();
+  phoneProdus= $("#phone").val();
   imagineProdus= $("#imagine")[0].files[0];
 
 var formular = new FormData();
@@ -145,6 +168,7 @@ formular.append("pret", pretProdus);
 formular.append("categorie", categorieProdus);
 formular.append("locatie", locatieProdus);
 formular.append("imagine", imagineProdus);
+formular.append("phone", phoneProdus);
 
 
 $.ajax({

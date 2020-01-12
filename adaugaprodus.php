@@ -17,13 +17,23 @@ $nume= $_POST['nume'];
 $pret = $_POST['pret'];
 $categorie = $_POST['categorie'];
 $locatie = $_POST['cantitate'];
+$phone = $_POST['phone'];
 
 $nume_safe = mysqli_escape_string($db, $nume); //,;\'"
 $pret_safe = mysqli_escape_string($db, $pret);
 $categorie_safe = mysqli_escape_string($db, $categorie);
 $locatie_safe = mysqli_escape_string($db, $cantitate);
 $imagine_nume= $_FILES['imagine']['name'];
-$query = mysqli_query($db, "INSERT INTO items(name, price, category, location, photo, user_name) VALUES ('$nume_safe', '$pret_safe', '$categorie_safe', '$locatie_safe', '$imagine_nume', '$username')");
+$today = getdate();
+$y= $today['year'];
+$m= $today['mon'];
+$d= $today['mday'];
+// echo $y;
+// echo $m;
+// echo $d;
+$date= $y.$m.$d;
+// echo $date;
+$query = mysqli_query($db, "INSERT INTO items(name, price, category, location, photo, user_name, date, phone) VALUES ('$nume_safe', '$pret_safe', '$categorie_safe', '$locatie_safe', '$imagine_nume', '$username', '$date', '$phone')");
 if(mysqli_insert_id($db)){
 
    move_uploaded_file($_FILES['imagine']['tmp_name'], "imagini/" . $imagine_nume);

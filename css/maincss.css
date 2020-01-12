@@ -1,7 +1,14 @@
 .container {
   max-width: 960px;
 }
-
+html {
+overflow: scroll;
+overflow-x: hidden;
+}
+::-webkit-scrollbar {
+width: 0px; /* remove scrollbar space /
+background: transparent; / optional: just make scrollbar invisible /
+}
 /*
  * Custom translucent site header
  */
@@ -159,5 +166,14 @@ ul, ol {
 .whiteee{
   color:white;
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.firstthing {
+  margin-top: 2em;
+  color: white;
+  padding: 3em;
+}
+
 
 /* SOCIAL MEDIA ICONS IN THE FOOTER */
