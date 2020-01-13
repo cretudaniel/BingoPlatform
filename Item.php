@@ -76,11 +76,11 @@ else {
 		<span class="col-12 badge badge-success" style="display:none;" id="verde"></span>
 		<br />
 <form action="adauga.php" method="POST">
-		Name: <input type="text" class="form-control" id="nume" name="nume"
+		Name : <input type="text" class="form-control" id="nume" name="nume"
     style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"> <br />
-		Price: <input type="text" class="form-control" id="pret" name="pret"
+		Price : <input type="text" class="form-control" id="pret" name="pret"
     style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"> <br />
-		Category:
+		Category :
 		<select class="form-control" id="categorie" name="categorie"
     style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
 
@@ -108,6 +108,8 @@ else {
 			<!-- <option>Consumabile</option>
 			<option>Gradina</option> -->
 		</select>
+  </br>
+    Description : <input type="text" id="descriere"name="descriere" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
     <br />
     Location : <input type="text" id="locatie"name="locatie" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
     <br />
@@ -118,9 +120,9 @@ else {
 		<button class="btn btn-success" id="1"
     style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
     List the product</button>
-    <a href="productlist.php" class="btn btn-success" style="float:right;
+    <a href="category.php" class="btn btn-success" style="float:right;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);">
-      Product list //NOT IN USE
+    Product list
   </a>
   </form>
   </div>
@@ -154,12 +156,14 @@ else {
 	var categorieProdus;
   var locatieProdus;
   var imagineProdus;
-  var phone
+  var phone;
+  var description;
 	numeProdus= $("#nume").val();
 	pretProdus= $("#pret").val();
 	categorieProdus= $("#categorie").val();
   locatieProdus= $("#locatie").val();
   phoneProdus= $("#phone").val();
+  descriptionProdus= $("#description").val();
   imagineProdus= $("#imagine")[0].files[0];
 
 var formular = new FormData();
@@ -168,6 +172,7 @@ formular.append("pret", pretProdus);
 formular.append("categorie", categorieProdus);
 formular.append("locatie", locatieProdus);
 formular.append("imagine", imagineProdus);
+formular.append("description", descriptionProdus);
 formular.append("phone", phoneProdus);
 
 

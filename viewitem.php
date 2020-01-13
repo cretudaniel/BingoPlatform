@@ -35,7 +35,8 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="/webapp/css/maincss.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link href="css2.css?version=20" rel="stylesheet">
+  <link href="css3.css?version=15" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/835a1fdbc1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -68,9 +69,7 @@ if (isset($_SESSION['username'])) {
     <a class="btn btn-outline-danger" href="logout.php">X</a>
     </nav>
     </div>
-<?php
-$cat=$_GET["cat"];
- ?>
+
 
   <!-- THE END OF THE HEADER -->
 
@@ -104,53 +103,43 @@ $cat=$_GET["cat"];
     <a href="categorys.php?cat=clothes%20for%20her">for her</a>
     <a href="categorys.php?cat=clothes%20for%20kids">for kids</a>
   </div>
+  <?php
+  $id=$_GET["id"];
+  $result = mysqli_query($db,"SELECT * FROM items WHERE id='$id'");
+  $i=0;
+  while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+    $id=$row['id'];
+    $name=$row['name'];
+    $price=$row['price'];
+    $category=$row['category'];
+    $location=$row['location'];
+    $photo=$row['photo'];
+    $username=$row['user_name'];
+    $year=$row['year'];
+    $phone=$row['phone'];
+    $description=$row['description'];
+    $views= rand(50, 150);
+  }
+   ?>
   <div class="cat-right">
-  <h1>Here are the most new items listed for sale </h1>
-  <section class="row">
-    <?php
-      $result = mysqli_query($db,"SELECT * FROM items WHERE category='$cat'");
-      $i=0;
-      while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
-        $id=$row['id'];
-        $name=$row['name'];
-        $price=$row['price'];
-        $category=$row['category'];
-        $location=$row['location'];
-        $photo=$row['photo'];
-        $username=$row['user_name'];
-        $views= rand(50, 150);
-        $i=$i+1;
-        echo "<div class=\"col\" style=\"cursor: pointer;\" onclick=\"window.location='viewitem.php?id=".$id."';\">
-          <div class=\"continut\">
-            <div class=\"imagine\" style=\"  background: url(imagini/".$photo.");-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: 100% 100%;\">
-          </div>
-          <div class=\"details2\">
-            <div class=\"name\">
-          <h6>".$name."<h6>
-            </div>
-            <div class=\"price\">
-              <h5>".$price."$</h5>
-            </div>
-            <div class=\"name2\">
-          <p>".$username."<p>
-            </div>
-            <div class=\"price2\">
-              <h6>VIEWS:".$views."</h6>
-            </div>
-          </div>
-        </div>
-        </div>";
-        if ($i==3) {
-        echo "</section>
-        <section class=\"row\">";
-        }
-      };
-     ?>
-</section>
-  </div>
+
+<div class="colu colu-l">
+    <img class="one-edge-shadow" src="imagini/<?php echo $photo ?>" alt="photo" width="700px" height="500px" style="border-radius:25px;">
 </div>
-  <div>
-        </section>
+<div class="colu colu-r">
+  <h2><?php echo $name  ?></h2>
+  <br>
+  <p>Price: <span><?php echo $price?> $</span></p>
+  <p>Category: <span><?php echo $category?> </span></p>
+  <p>Location: <span><?php echo $location?> </span></p>
+  <p>User who own this: <span><?php echo $username?> </span></p>
+  <p>Year: <span><?php echo $year?> </span></p>
+  <p>Views: <span><?php echo $views?> </span></p>
+  <p>Phone number: <span><?php echo $phone?> </span></p>
+  <p>Description: <span><?php echo $description?> </span></p>
+
+
+</div>
 
 
   <!-- TEST FOR THE ID DELETE VIEWER ETC -->
@@ -247,19 +236,10 @@ $cat=$_GET["cat"];
   // get method
          ?>
         </div>
-        <footer id="sticky-footer" class="py-3  border-top border-info-2 shadow-sm text-white marginbot0" style="position:absolute; width:100%; background-color: /*#e5e5e5*/ #262626 ;">
-     <div class="container text-center">
-       <!--Facebook-->
-       <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
-       <!--Bitbucket-->
-       <a class="btn btn-social-icon btn-lg btn-bitbucket" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-bitbucket"></i></a>&nbsp;&nbsp;
-       <!--Twitter-->
-       <a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
-       <!--GMAIL-->
-       <a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-google"></i></a>&nbsp;&nbsp;
-     </div>
-   </footer>
-
+      </div>
+      <div class="footer1">
+        <p>END</p>
+      </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>

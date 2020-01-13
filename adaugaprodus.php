@@ -16,13 +16,14 @@ else {
 $nume= $_POST['nume'];
 $pret = $_POST['pret'];
 $categorie = $_POST['categorie'];
-$locatie = $_POST['cantitate'];
+$locatie = $_POST['locatie'];
 $phone = $_POST['phone'];
+$description = $_POST['description'];
 
 $nume_safe = mysqli_escape_string($db, $nume); //,;\'"
 $pret_safe = mysqli_escape_string($db, $pret);
 $categorie_safe = mysqli_escape_string($db, $categorie);
-$locatie_safe = mysqli_escape_string($db, $cantitate);
+$locatie_safe = mysqli_escape_string($db, $locatie);
 $imagine_nume= $_FILES['imagine']['name'];
 $today = getdate();
 $y= $today['year'];
@@ -33,7 +34,7 @@ $d= $today['mday'];
 // echo $d;
 $date= $y.$m.$d;
 // echo $date;
-$query = mysqli_query($db, "INSERT INTO items(name, price, category, location, photo, user_name, date, phone) VALUES ('$nume_safe', '$pret_safe', '$categorie_safe', '$locatie_safe', '$imagine_nume', '$username', '$date', '$phone')");
+$query = mysqli_query($db, "INSERT INTO items(name, price, category, location, photo, user_name, date, phone, description) VALUES ('$nume_safe', '$pret_safe', '$categorie_safe', '$locatie_safe', '$imagine_nume', '$username', '$date', '$phone', '$description')");
 if(mysqli_insert_id($db)){
 
    move_uploaded_file($_FILES['imagine']['tmp_name'], "imagini/" . $imagine_nume);

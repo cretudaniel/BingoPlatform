@@ -35,7 +35,7 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="/webapp/css/maincss.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link href="css2.css?version=5" rel="stylesheet">
+  <link href="css2.css?version=20" rel="stylesheet">
 </head>
 
 <body>
@@ -118,7 +118,7 @@ if (isset($_SESSION['username'])) {
         $username=$row['user_name'];
         $views= rand(50, 150);
         $i=$i+1;
-        echo "<div class=\"col\">
+        echo "<div class=\"col\" style=\"cursor: pointer;\" onclick=\"window.location='viewitem.php?id=".$id."';\">
           <div class=\"continut\">
             <div class=\"imagine\" style=\"  background: url(imagini/".$photo.");-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: 100% 100%;\">
           </div>
