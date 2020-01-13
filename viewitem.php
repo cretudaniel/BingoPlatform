@@ -132,7 +132,7 @@ if (isset($_SESSION['username'])) {
   <p>Price: <span><?php echo $price?> $</span></p>
   <p>Category: <span><?php echo $category?> </span></p>
   <p>Location: <span><?php echo $location?> </span></p>
-  <p>User who own this: <span><?php echo $username?> </span></p>
+  <p>User who own this: <span><a href="restoftheusers.php?id=<?php echo $username?>"><?php echo $username?> </a></span></p>
   <p>Year: <span><?php echo $year?> </span></p>
   <p>Views: <span><?php echo $views?> </span></p>
   <p>Phone number: <span><?php echo $phone?> </span></p>
@@ -238,7 +238,7 @@ if (isset($_SESSION['username'])) {
         </div>
       </div>
       <div class="footer1">
-        <p>END</p>
+        <p>&nbsp;</p>
       </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>

@@ -115,6 +115,8 @@ else {
     <br />
     Phone Number : <input type="text" id="phone"name="phone" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
     <br />
+    Year : <input type="text" id="year"name="year" class="form-control" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);"/>
+    <br />
      Photo : <input type="file" id="imagine" name="imagine" class="btn-secondary" />
  		<br /><br /><br />
 		<button class="btn btn-success" id="1"
@@ -127,8 +129,8 @@ else {
   </form>
   </div>
 </div>
-
-<footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;position:fixed; width:100%; background-color: /*#e5e5e5*/ #333333 ;">
+<br>
+<footer id="sticky-footer" class="py-3  border-top border-info shadow-sm text-white" style="z-index:10;bottom:0px;border-top: 3em;width:100%; background-color: /*#e5e5e5*/ #333333 ;">
 <div class="container text-center">
 <!--Facebook-->
 <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
@@ -157,12 +159,14 @@ else {
   var locatieProdus;
   var imagineProdus;
   var phone;
+  var year;
   var description;
 	numeProdus= $("#nume").val();
 	pretProdus= $("#pret").val();
 	categorieProdus= $("#categorie").val();
   locatieProdus= $("#locatie").val();
   phoneProdus= $("#phone").val();
+  yearProdus= $("#year").val();
   descriptionProdus= $("#description").val();
   imagineProdus= $("#imagine")[0].files[0];
 
@@ -171,6 +175,7 @@ formular.append("nume", numeProdus);
 formular.append("pret", pretProdus);
 formular.append("categorie", categorieProdus);
 formular.append("locatie", locatieProdus);
+formular.append("year", yearProdus);
 formular.append("imagine", imagineProdus);
 formular.append("description", descriptionProdus);
 formular.append("phone", phoneProdus);

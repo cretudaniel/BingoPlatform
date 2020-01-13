@@ -413,41 +413,7 @@ else {
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
 <!-- ITEMS YOU SELL -->
-                            <div class="row">
-                              <?php
-
-
-                             $result2 = mysqli_query($db,"SELECT * FROM items WHERE user_name = '$username' ");
-
-                             while($row = mysqli_fetch_array($result2, MYSQLI_BOTH)){
-                                 // USERNAME IS ALREADY SAVED
-
-                                 $name = $row['name'];
-                                 $photo = $row['photo'];
-                                 $age = $row['year'];
-                                 $price = $row['price'];
-                                 $id = $row['id'];
-
-                            echo "<div class=\"col-md-4\">
-                              <figure class=\"card card-product\">
-                                <div class=\"img-wrap\">
-                                  <img src=\"imagini/".$photo."\" style=\"min-height=100%;\">
-                                  <a class=\"btn-overlay\" href=\"#\"><i class=\"fa fa-search-plus\"></i> Quick view</a>
-                                </div>
-                                <figcaption class=\"info-wrap\">
-                                  <h6 class=\"title text-dots\" style=\"text-overflow: ellipsis; overflow: hidden; white-space: nowrap;\"><a href=\"#\">".$name."</a></h6>
-                                  <div class=\"action-wrap\">
-                                    <a href=\"#\" class=\"btn btn-primary btn-sm float-right\"> Order </a>
-                                    <div class=\"price-wrap h5\">
-                                      <span class=\"price-new\">$".$price."</span>
-                                    </div> <!-- price-wrap.// -->
-                                  </div> <!-- action-wrap -->
-                                </figcaption>
-                              </figure> <!-- card // -->
-                            </div> <!-- col // -->";
-                           };
-                           ?>
-                            </div> <!-- row.// -->
+                            
 
                             </div>
                             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

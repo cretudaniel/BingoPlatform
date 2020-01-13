@@ -27,10 +27,10 @@ else {
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
    <!-- Extra CSS that i need -->
-   <link href="css/maincss.css" rel="stylesheet">
+   <link href="css/maincss.css?version=1" rel="stylesheet">
    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
    <link href="css/animations.css" rel="stylesheet">
-   <link href="css/user.css" rel="stylesheet">
+   <link href="css/user.css?version=1" rel="stylesheet">
    <!-- The awesome font icon pack -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <style>
@@ -77,7 +77,7 @@ else {
      $admintest=$row['usercategory'];
    };
 
-  $result = mysqli_query($db,"SELECT * FROM user WHERE id = '$idoftheuseryouwanttoview' ");
+  $result = mysqli_query($db,"SELECT * FROM user WHERE username = '$idoftheuseryouwanttoview' ");
 
   while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
       // USERNAME IS ALREADY SAVED
@@ -275,41 +275,7 @@ else {
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
 <!-- ITEMS YOU SELL -->
-                            <div class="row">
-                              <?php
 
-
-                             $result2 = mysqli_query($db,"SELECT * FROM items WHERE user_name = '$username' ");
-
-                             while($row = mysqli_fetch_array($result2, MYSQLI_BOTH)){
-                                 // USERNAME IS ALREADY SAVED
-
-                                 $name = $row['name'];
-                                 $photo = $row['photo'];
-                                 $age = $row['year'];
-                                 $price = $row['price'];
-                                 $id = $row['id'];
-
-                            echo "<div class=\"col-md-4\">
-                              <figure class=\"card card-product\">
-                                <div class=\"img-wrap\">
-                                  <img src=\"imagini/".$photo."\" style=\"min-height=100%;\">
-                                  <a class=\"btn-overlay\" href=\"#\"><i class=\"fa fa-search-plus\"></i> Quick view</a>
-                                </div>
-                                <figcaption class=\"info-wrap\">
-                                  <h6 class=\"title text-dots\" style=\"text-overflow: ellipsis; overflow: hidden; white-space: nowrap;\"><a href=\"#\">".$name."</a></h6>
-                                  <div class=\"action-wrap\">
-                                    <a href=\"#\" class=\"btn btn-primary btn-sm float-right\"> Order </a>
-                                    <div class=\"price-wrap h5\">
-                                      <span class=\"price-new\">$".$price."</span>
-                                    </div> <!-- price-wrap.// -->
-                                  </div> <!-- action-wrap -->
-                                </figcaption>
-                              </figure> <!-- card // -->
-                            </div> <!-- col // -->";
-                           };
-                           ?>
-                            </div> <!-- row.// -->
 
                             </div>
                             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

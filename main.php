@@ -208,7 +208,7 @@ if (isset($_SESSION['username'])) {
       </footer>
 -->
 
-      <footer id="sticky-footer" class="py-3  border-top border-info-2 shadow-sm text-white marginbot0" style="bottom:0px;position:absolute; width:100%; background-color: /*#e5e5e5*/ #262626 ;">
+      <footer id="sticky-footer" class="py-3  border-top border-info-2 shadow-sm text-white marginbot0" style="bottom:0px; width:100%; background-color: /*#e5e5e5*/ #262626 ;">
    <div class="container text-center">
      <!--Facebook-->
      <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-lg']);"><i class="fa fa-facebook"></i></a> &nbsp;
